@@ -77,5 +77,5 @@ test_data.resize(1, 50, 50, 1)
 
 predictions = model.predict(test_data)
 
-emotion[predictions.argmax()]
+print(emotion[predictions.argmax()])
 
