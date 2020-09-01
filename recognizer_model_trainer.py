@@ -29,8 +29,6 @@ x1 = np.array(x1)
 y1 = np.array(y1)
 
 x1 = x1.reshape(28821, 48, 48, 1)
-y1.shape
-
 y1 = to_categorical(y1, 7)
 
 model = models.Sequential()
@@ -63,4 +61,3 @@ model.compile(loss='categorical_crossentropy', optimizer=tf.keras.optimizers.Ada
 model.fit(x1, y1, batch_size=batch_size, epochs=epochs)
 
 model.save('model.h5')
-
