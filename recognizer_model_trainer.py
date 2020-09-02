@@ -1,10 +1,12 @@
 import tensorflow as tf
 from tensorflow.keras import layers, models
-from tensorflow.keras.utils import to_categorical
-
+import os
+import cv2
+import numpy as np
 # DATA COLLECTION
-'''
+
 train_dir = 'images/train'
+input_shape = (48, 48, 1)
 
 emotions = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 
@@ -23,15 +25,16 @@ for emotion in range(len(emotions)):
     print(f'Emotion {emotions[emotion]} DONE')
 print('Data collection complete')
 
+
 x1 = np.array(x1)
 y1 = np.array(y1)
-'''
+
 x1 = x1.reshape(28821, 48, 48, 1)
-y1 = to_categorical(y1, 7)
+y1 = tf.keras.utils.to_categorical(y1, 7)
 
 model = models.Sequential()
 
-model.add(layers.Conv2D(64, (5, 5), activation='relu', input_shape=(48, 48, 1)))
+model.add(layers.Conv2D(64, (5, 5), activation='relu', input_shape=input_shape))
 model.add(layers.MaxPooling2D(pool_size=(5, 5), strides=(2, 2)))
 
 model.add(layers.Conv2D(64, (3, 3), activation='relu'))
@@ -49,7 +52,7 @@ model.add(layers.Dropout(0.2))
 model.add(layers.Dense(1024, activation='relu'))
 model.add(layers.Dropout(0.2))
 
-model.add(layers.Dense(7, activation='softmax'))
+model.add(layers.Dense(len(emotions), activation='softmax'))
 
 model.compile(loss='categorical_crossentropy', optimizer=tf.keras.optimizers.Adam(), metrics=['accuracy'])
 
