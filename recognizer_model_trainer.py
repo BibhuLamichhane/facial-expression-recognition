@@ -1,8 +1,5 @@
 import tensorflow as tf
 from tensorflow.keras import layers, models
-import os
-import cv2
-import numpy as np
 from tensorflow.keras.utils import to_categorical
 
 # DATA COLLECTION
@@ -25,11 +22,10 @@ for emotion in range(len(emotions)):
         y1.append(emotion)
     print(f'Emotion {emotions[emotion]} DONE')
 print('Data collection complete')
-'''
 
 x1 = np.array(x1)
 y1 = np.array(y1)
-
+'''
 x1 = x1.reshape(28821, 48, 48, 1)
 y1 = to_categorical(y1, 7)
 

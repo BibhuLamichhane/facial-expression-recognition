@@ -1,18 +1,13 @@
 from tensorflow.keras.models import load_model
 import cv2
 
-# load the image
-# img = cv2.imread('images/test/disgust/2275.jpg', 0)
-
 
 class EmotionPredicter:
     def __int__(self):
-        pass
+        self.emotions = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 
     def predict(self, img):
         if img is not None:
-            emotions = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
-
             # load model
             mode = load_model('model.h5')
 
@@ -25,7 +20,7 @@ class EmotionPredicter:
             predictions = mode.predict(img)
             output = []
             for prediction in range(len(predictions[0])):
-                text = f'{emotions[prediction].upper()}: {(predictions[0][prediction] * 100).round()}'
+                text = f'{self.emotions[prediction].upper()}: {(predictions[0][prediction] * 100).round()}'
                 output.append(text)
             return output
 
@@ -33,5 +28,3 @@ class EmotionPredicter:
 if __name__ == '__main__':
     predict = EmotionPredicter()
     predict.predict(None)
-
-print('')

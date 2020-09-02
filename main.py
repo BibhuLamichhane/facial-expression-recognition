@@ -5,13 +5,12 @@ from predict import EmotionPredicter
 
 def face_finder():
     predict = EmotionPredicter()
-    CAM = cv.VideoCapture(0)
+    cam = cv.VideoCapture(0)
     cv.namedWindow = 'Expression Recognizer'
     c = 0
     data = []
     while True:
-        ret, f = CAM.read()
-        face = f
+        ret, f = cam.read()
 
         if not ret:
             break
@@ -51,7 +50,7 @@ def face_finder():
         if k % 256 == ord('s'):
             break
 
-    CAM.release()
+    cam.release()
     cv.destroyAllWindows()
 
 
