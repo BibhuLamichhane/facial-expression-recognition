@@ -5,10 +5,11 @@ import cv2
 import numpy as np
 from tensorflow.keras.utils import to_categorical
 
+# DATA COLLECTION 
+'''
 train_dir = 'images/train'
 
 emotions = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
-
 
 x1 = []
 y1 = []
@@ -24,6 +25,7 @@ for emotion in range(len(emotions)):
         y1.append(emotion)
     print(f'Emotion {emotions[emotion]} DONE')
 print('Data collection complete')
+'''
 
 x1 = np.array(x1)
 y1 = np.array(y1)
@@ -53,11 +55,8 @@ model.add(layers.Dropout(0.2))
 
 model.add(layers.Dense(7, activation='softmax'))
 
-epochs = 100
-batch_size = 128
-
 model.compile(loss='categorical_crossentropy', optimizer=tf.keras.optimizers.Adam(), metrics=['accuracy'])
 
-model.fit(x1, y1, batch_size=batch_size, epochs=epochs)
+model.fit(x1, y1, batch_size=128, epochs=100)
 
 model.save('model.h5')
