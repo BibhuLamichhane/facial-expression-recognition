@@ -2,7 +2,7 @@ from tensorflow.keras.models import load_model
 import cv2
 
 
-class EmotionPredicter:
+class EmotionPredictor:
     def predict(self, img):
         emotions = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
         if img is not None:
@@ -24,5 +24,5 @@ class EmotionPredicter:
 
 
 if __name__ == '__main__':
-    predict = EmotionPredicter()
+    predict = EmotionPredictor()
     predict.predict(None)

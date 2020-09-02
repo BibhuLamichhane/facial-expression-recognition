@@ -1,10 +1,10 @@
 import cv2 as cv
 import face_recognition
-from predict import EmotionPredicter
+from predict import EmotionPredictor
 
 
 def face_finder():
-    predict = EmotionPredicter()
+    predict = EmotionPredictor()
     cam = cv.VideoCapture(0)
     cv.namedWindow = 'Expression Recognizer'
     c = 0
