@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 from tensorflow.keras.utils import to_categorical
 
-# DATA COLLECTION 
+# DATA COLLECTION
 '''
 train_dir = 'images/train'
 
