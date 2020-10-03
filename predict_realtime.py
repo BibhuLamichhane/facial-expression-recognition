@@ -1,12 +1,11 @@
 from tensorflow.keras.models import load_model
 import cv2
-import os
 
 
 class EmotionPredictor:
     def predict(self, img):
         emotions = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
-        if img in os.listdir():
+        if img is not None:
             # load model
             mode = load_model('model.h5')
 
@@ -26,5 +25,4 @@ class EmotionPredictor:
 
 if __name__ == '__main__':
     predict = EmotionPredictor()
-    image = input("Enter file name with extension(jpg, png, etc)")
-    predict.predict(image)
+    predict.predict(None)

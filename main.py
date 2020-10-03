@@ -1,6 +1,6 @@
 import cv2 as cv
 import face_recognition
-from predict import EmotionPredictor
+from predict_realtime import EmotionPredictor
 
 
 def face_finder():
