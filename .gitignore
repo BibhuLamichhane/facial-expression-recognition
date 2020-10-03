@@ -3,3 +3,5 @@
 venv
 images
 images.zip
+pythonenv3.8
+__pycache__
