@@ -1,6 +1,6 @@
 # Facial-Expression-Recognition
 
-## The following image is a small sample from the training data
+## The following images are a small sample from the training data
 <img src="https://github.com/BibhuLamichhane/facial-expression-recognition/blob/master/sample.png">
 
 ## These are the predictions made by my model on some random images from the internet
@@ -18,7 +18,7 @@
 
 ### If there were any error while using my weights you have to train your own model
 1. Find a facial expression dataset (I would recommend <a href="https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data">Kaggle Facial Expression Recognition Dataset</a>)
-2. In the file recognizer_model_trainer.py write the code to convert these images to (x, 48, 48, 1) shaped arrays and store the data in "x1" for the image pixels and "y1" for the labels of the image
+2. In the file recognizer_model_trainer.py write the code to convert these images to (x, 48, 48, 1) shaped arrays and use the variable name "x1" to store the image pixels and "y1" to store the the labels of the image
 3. Run the file recognizer_model_trainer.py
 4. Run the file main.py
 
