@@ -10,8 +10,11 @@
 
 ### To predict the emotion in real time using your webcam
 1. Create a python 3.6.5 virtual environment
-2. Run the command "pip install -r requirements.txt" in the terminal
-3. Run the command "python main.py" in the terminal
+2. Run the commands: 
+```
+      pip install -r requirements.txt
+      python main.py
+```
 
 ### If there were any error while using my weights you have to train your own model
 1. Find a facial expression dataset (I would recommend <a href="https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data">Kaggle Facial Expression Recognition Dataset</a>)
